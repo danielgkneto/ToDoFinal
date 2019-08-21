@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: header" />
+<body>
+<div th:replace="base :: title"></div>
+<div th:replace="base :: navlinks"></div>
+<div class="container bg-light">
+    <h2>List</h2>
+    <a href="/add">Add a Task</a><br />
+    <table class="table">
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+            <td scope="col">Actions</td>
+        </tr>
+        <tr th:scope="row" th:each="toDo : ${toDos}">
+            <td th:text="${toDo.title}"></td>
+            <td th:text="${toDo.content}"></td>
+            <td>
+                <button type="button" class="btn btn-primary"><a class="text-light" th:href="@{/update/{id}(id=${toDo.id})}">Update</a></button>
+                <button type="button" class="btn btn-primary"><a class="text-light" th:href="@{/detail/{id}(id=${toDo.id})}">Details</a></button>
+                <button type="button" class="btn btn-danger"><a class="text-light" th:href="@{/delete/{id}(id=${toDo.id})}">Delete</a></button>
+            </td></tr>
+    </table>
+</div>
+<div th:replace="base :: scripts"></div>
+</body>
+</html>
