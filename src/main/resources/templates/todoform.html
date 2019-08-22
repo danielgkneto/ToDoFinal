@@ -16,12 +16,11 @@
             </div>
             <div class="form-group">
                 <label for="content">Content: </label>
-                Content: <input id="content" type="text" class="form-control" th:field="*{content}" />
+                Content: <textarea rows="3" id="content" class="form-control" th:field="*{content}" />
                 <span th:if="${#fields.hasErrors('content')}"
                       th:errors="*{content}"></span>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <!--<input type="submit" value="Submit" />-->
         </form>
     </div>
     <div th:replace="base :: scripts"></div>
