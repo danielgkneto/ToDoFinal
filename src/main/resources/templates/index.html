@@ -11,7 +11,7 @@
         <tr>
             <th scope="col">Title</th>
             <th scope="col">Content</th>
-            <td scope="col">Actions</td>
+            <td scope="col" class="font-weight-bold">Actions</td>
         </tr>
         <tr th:scope="row" th:each="toDo : ${toDos}">
             <td th:text="${toDo.title}"></td>

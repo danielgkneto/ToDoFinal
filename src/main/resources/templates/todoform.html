@@ -5,7 +5,7 @@
     <div th:replace="base :: title"></div>
     <div th:replace="base :: navlinks"></div>
     <div class="container bg-light">
-        <h2>Add a task</h2>
+        <h2>Task</h2>
         <form action="#" th:action="@{/process}" th:object="${toDo}" method="post">
             <input type="hidden" th:field="*{id}" />
             <div class="form-group">
